@@ -289,4 +289,8 @@ func (r *Reader) Read(p []byte) (int, error) {
 			}
 		}
 	}
+
+	// Not really needed but makes compiler happy
+	r.err = ErrCorrupt
+	return 0, r.err
 }
